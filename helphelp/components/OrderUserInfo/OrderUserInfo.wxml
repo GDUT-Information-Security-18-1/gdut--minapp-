@@ -1,0 +1,9 @@
+<view class="OrderUserInfo">
+  <view class="user_info_avatar">
+    <image mode="widthFix" src="../../icons/avatar.png"></image>
+  </view>
+  <view class="user_info_wrap">
+    <view class="user_name">用户A</view>
+    <view class="user_time">接单截至时间: 12:00</view>
+  </view>
+</view>

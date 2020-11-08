@@ -1,5 +1,37 @@
 <view class="help_index">
-  <SearchInput>
+  <!-- 搜索框开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框结束 -->
 
-  </SearchInput>
+  <!-- 导航开始 -->
+  <view class="index_cate">
+    <navigator wx:for="{{catesList}}" wx:key="id">
+      <block>
+        <image mode="widthFix" src="{{item.image_src}}"></image>
+        <image mode="widthFix" src="{{item.text_src}}"></image>
+      </block>
+    </navigator>
+  </view>
+  <!-- 导航结束 -->
+
+  <!-- Tabs开始-->
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab">
+        <navigator class="orders_item">
+          <OrderUserInfo></OrderUserInfo>
+          <view class="orders_info_wrap">
+            <view class="orders_text">
+              你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            </view>
+            <view class="orders_price">¥12312</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">1</block>
+    <block wx:else="{{tabs[2].isActive}}">2</block>
+  </Tabs>
+  <!-- Tabs结束-->
+
 </view>

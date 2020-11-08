@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "SearchInput":"../../components/SearchInput/SearchInput"
+    "SearchInput": "../../components/SearchInput/SearchInput",
+    "Tabs": "../../components/Tabs/Tabs",
+    "OrderUserInfo": "../../components/OrderUserInfo/OrderUserInfo"
   },
   "navigationBarTitleText": "帮帮首页"
 
