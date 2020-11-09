@@ -1,0 +1,16 @@
+<view class="detail_swiper" wx:if="{{ordersObj.havePics}}">
+  <swiper autoplay circular indicator-dots>
+    <swiper-item wx:for="{{ordersObj.pics}}" wx:key="pics_id"
+    bindtap="handlePrevewImage" data-url="{{item.pics_mid}}"
+    >
+      <image src="{{item.pics_mid}}" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<view class="orders_text">{{ordersObj.orders_text}}</view>
+<view class="orders_price">跑腿费用: ¥{{ordersObj.orders_price}}</view>
+<view class="goods_price" wx:if="{{ordersObj.isBuy}}">商品费用: ¥{{ordersObj.goods_price}}</view>
+<view class="orders_position">收货地址: {{ordersObj.orders_position}}</view>
+<view class="orders_time">送达时间: {{ordersObj.orders_time}}</view>

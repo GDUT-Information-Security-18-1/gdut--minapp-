@@ -26,6 +26,10 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+.first_tab .orders_item .orders_info_wrap .orders_position {
+  color: var(--themeColor);
+  font-size: 30rpx;
+}
 .first_tab .orders_item .orders_info_wrap .orders_price {
   color: var(--themeColor);
   font-size: 32rpx;

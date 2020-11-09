@@ -7,7 +7,7 @@
     "pages/login/login",
     "pages/auth/auth",
     "pages/pay/pay",
-    "pages/goods_detail/goods_detail"
+    "pages/orders_detail/orders_detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

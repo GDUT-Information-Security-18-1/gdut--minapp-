@@ -18,13 +18,17 @@
   <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
     <block wx:if="{{tabs[0].isActive}}">
       <view class="first_tab">
-        <navigator class="orders_item">
+        <navigator class="orders_item" wx:for="{{ordersList}}" wx:key="orders_id"
+          url="/pages/orders_detail/orders_detail?orders_id={{item.orders_id}}">
           <OrderUserInfo></OrderUserInfo>
           <view class="orders_info_wrap">
             <view class="orders_text">
-              你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+              {{item.orders_text}}
             </view>
-            <view class="orders_price">¥12312</view>
+            <view class="orders_position">
+              送货地点:{{item.orders_position}}
+            </view>
+            <view class="orders_price">¥{{item.orders_price}}</view>
           </view>
         </navigator>
       </view>
