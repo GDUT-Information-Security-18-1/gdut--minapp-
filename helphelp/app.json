@@ -29,12 +29,6 @@
         "selectedIconPath": "icons/index.png"
       },
       {
-        "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath": "icons/_order.png",
-        "selectedIconPath": "icons/order.png"
-      },
-      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "icons/_user.png",

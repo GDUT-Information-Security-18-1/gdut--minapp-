@@ -15,16 +15,16 @@ Page({
       orders_time: "13:20",
       pics: [{
         pics_id: 0,
-        pics_mid: "../../icons/osu.png"
+        pics_mid: "https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg"
       }, {
         pics_id: 1,
-        pics_mid: "../../icons/osu.png"
+        pics_mid: "https://pic.liesio.com/2020/11/10/cf943ff41ab8e.jpg"
       }, {
         pics_id: 2,
-        pics_mid: "../../icons/osu.png"
+        pics_mid: "https://pic.liesio.com/2020/11/10/07f531d0ed63a.jpg"
       }, {
         pics_id: 3,
-        pics_mid: "../../icons/osu.png"
+        pics_mid: "https://pic.liesio.com/2020/11/10/ffe68a1189e44.jpg"
       }]
     }
   },
@@ -88,11 +88,25 @@ Page({
 
   },
   handlePrevewImage(e) {
-    const urls = ["https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg", "https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg", "https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg", "https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg"]
+    const urls = ["https://pic.liesio.com/2020/11/09/5b1b526c259a3.jpg", "https://pic.liesio.com/2020/11/10/cf943ff41ab8e.jpg", "https://pic.liesio.com/2020/11/10/07f531d0ed63a.jpg", "https://pic.liesio.com/2020/11/10/ffe68a1189e44.jpg"]
     const current = e.currentTarget.dataset.url;
+    console.log(current);
     wx.previewImage({
       current,
       urls
     });
+  },
+  popConfirm: function(){
+    wx.showModal({
+      title: '接受订单',
+      content: '确认要接受此订单吗？',
+      success: function (res) {
+        if (res.confirm) {  
+          console.log('点击确认回调')
+        } else {   
+          console.log('点击取消回调')
+        }
+      }
+    })
   }
 })

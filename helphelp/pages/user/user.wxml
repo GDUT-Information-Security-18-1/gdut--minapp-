@@ -1,2 +1,47 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user_info_wrap">
+  <view class="user_img_wrap">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+    <block wx:else>
+      <image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user_info">
+        <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+        <view class="user_name">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="user_content">
+  <view class="user_main">
+    <view class="order_wrap">
+      <view class="order_title">我的订单</view>
+      <view class="order_content">
+        <navigator>
+          <image class="iconfont" mode="heightFix" src="https://pic.liesio.com/2020/11/10/dd948af547b34.png"></image>
+          <view class="order_name">全部订单</view>
+        </navigator>
+        <navigator>
+          <image class="iconfont" mode="heightFix" src="https://pic.liesio.com/2020/11/10/060d95b42fd3d.png"></image>
+          <view class="order_name">待送货</view>
+        </navigator>
+        <navigator>
+          <image class="iconfont" mode="heightFix" src="https://pic.liesio.com/2020/11/10/204b13a1427a0.png"></image>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator>
+          <image class="iconfont" mode="heightFix" src="https://pic.liesio.com/2020/11/10/94c800c851a9b.png"></image>
+          <view class="order_name">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="address_wrap">
+      收货地址管理
+    </view>
+    <view class="app_info_wrap">
+      <view class="app_info_item app_info_contact">
+        <text>联系客服</text>
+        <text>17666244239</text>
+      </view>
+      <view class="app_info_item">关于我们</view>
+    </view>
+  </view>
+</view>

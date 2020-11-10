@@ -14,3 +14,6 @@
 <view class="goods_price" wx:if="{{ordersObj.isBuy}}">商品费用: ¥{{ordersObj.goods_price}}</view>
 <view class="orders_position">收货地址: {{ordersObj.orders_position}}</view>
 <view class="orders_time">送达时间: {{ordersObj.orders_time}}</view>
+
+
+<button style="width:100%" class="btn_buy" bindtap="popConfirm">立即接单</button>
