@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Tabs": "../../components/Tabs/Tabs",
+    "OrderUserInfo": "../../components/OrderUserInfo/OrderUserInfo"
+  },
+  "navigationBarTitleText":"订单查询"
+  
 }

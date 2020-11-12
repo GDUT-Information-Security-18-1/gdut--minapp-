@@ -3,17 +3,32 @@ const app = getApp()
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res.code)
+        //发送请求
+        wx.request({
+          url: 'http://8.129.180.36:8080/user/login', //接口地址
+          method: "POST",
+          data: {
+            "js_code": res.code,  
+            "unionid": ""
+          },
+          header: {   
+            "Accept": "*/*",
+            "Content-Type": "application/json"
+          },
+          success: function (res) {
+            console.log(res.data);
+            if( res == null || res.data == null ) { 
+              console.error( '网络请求失败' ); 
+              return; 
+             } 
+          }
+        })
       }
-    })
+    }) 
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -23,7 +38,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -36,6 +50,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    userKey:[],
   }
 })

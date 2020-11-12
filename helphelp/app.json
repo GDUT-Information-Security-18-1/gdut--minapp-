@@ -4,10 +4,9 @@
     "pages/order/order",
     "pages/user/user",
     "pages/search/search",
-    "pages/login/login",
     "pages/auth/auth",
-    "pages/pay/pay",
-    "pages/orders_detail/orders_detail"
+    "pages/orders_detail/orders_detail",
+    "pages/orders_create/orders_create"
   ],
   "window":{
     "backgroundTextStyle":"light",

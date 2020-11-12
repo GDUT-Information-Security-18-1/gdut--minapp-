@@ -1,2 +1,17 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <view class="order_main">
+    <navigator wx:for="{{orders}}" wx:key="orders_id" class="orders_item"
+    url="/pages/orders_detail/orders_detail?orders_id={{item.orders_id}}">
+      <OrderUserInfo></OrderUserInfo>
+      <view class="orders_info_wrap">
+        <view class="orders_text">
+          {{item.orders_text}}
+        </view>
+        <view class="orders_position">
+          送货地点:{{item.orders_position}}
+        </view>
+        <view class="orders_price">¥{{item.orders_price}}</view>
+      </view>
+    </navigator>
+  </view>
+</Tabs>

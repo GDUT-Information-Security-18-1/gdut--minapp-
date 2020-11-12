@@ -1,11 +1,9 @@
 <view class="help_index">
-  <!-- 搜索框开始 -->
-  <SearchInput></SearchInput>
-  <!-- 搜索框结束 -->
-
+  
   <!-- 导航开始 -->
   <view class="index_cate">
-    <navigator wx:for="{{catesList}}" wx:key="id">
+    <navigator wx:for="{{catesList}}" wx:key="id"
+    url="/pages/orders_create/orders_create?type={{item.id}}">
       <block>
         <image mode="widthFix" src="{{item.image_src}}"></image>
         <image mode="widthFix" src="{{item.text_src}}"></image>
